@@ -46,8 +46,8 @@ We'll generate a dataset with a defined number of classes, and sparse matrices
 .. code-block:: python
 
     from sklearn.datasets import make_multilabel_classification
-    n_classes = 7
-    x, y = make_multilabel_classification(sparse=True, n_classes=n_classes, return_indicator='sparse', allow_unlabeled=False)
+
+    x, y = make_multilabel_classification(sparse = True, n_classes = 7, return_indicator = 'sparse', allow_unlabeled= False)
 
 
 Defining Parameters and Defaults
@@ -60,7 +60,7 @@ The parameters that are needed for our function are:
     * k (Default = 2): optimal distance between nodes
     * iterations (Default = 50): number of iterations of spring-force relaxation
     * n_size (Default = 25): ratio of node size (greater this value, larger the nodes, but always in proportion with other nodes)
-    * n_e_ratiotype (Default = "linear"): type of calculation (linear or logarithmic) for ratios to be applied on the proportions nodes and edges
+    * n_e_ratiotype (Default = "linear"): type of calculation (linear or logarithmic) for ratios to be applied on the proportions of nodes and edges
     * linear_ratio_val (Default = 0.5): value for calculating the ratio when "n_e_ratiotype" is chosen to be "linear"
     * log_ratio_base_val (Default = 1.2): value of the logarithmic base for calculating the ratio when "n_e_ratiotype" is chosen to be "log"
     * cmap_node (Default = "copper"): set of predefined color palette values from the colormap of networkx (Node Colormap)
