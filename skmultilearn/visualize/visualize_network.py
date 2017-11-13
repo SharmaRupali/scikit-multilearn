@@ -16,7 +16,7 @@ class VisualizeNetwork():
 
         y = sp.csr_matrix(y)
         y_asInt = y.astype(int)  # cast y as int
-        co_occurrence_matrix = y_asInt.T.dot(y_asInt)  # multiplying the matrix with it's transpose to get the co-occurrence matrix
+        co_occurrence_matrix = y_asInt.T.dot(y_asInt)  # multiplying the matrix with its transpose to get the co-occurrence matrix
 
         g = nx.from_scipy_sparse_matrix(co_occurrence_matrix)  # making graph from the sparse co-occurrence matrix
 
@@ -25,22 +25,23 @@ class VisualizeNetwork():
         H = nx.from_numpy_matrix(np.array(adjacency_matrix))  # creating network structure
         G = H.to_undirected()  # undirected graph - excluding edge repetitions
 
-        spring_pos = nx.spring_layout(G, k, iterations)  # spring_layput positions nodes using Fruchterman-Reingold force-directed algorithm
+        spring_pos = nx.spring_layout(G, k, iterations)  # positioning nodes using Fruchterman-Reingold force-directed algorithm
 
-        # taking the weights of the edges from the graph (list(G.edges_iter(data='weight')) - see the list of edges-weights)
+        # taking the weights of the edges from the graph (list(G.edges_iter(data='weight')))
         weights = []
         for u, v, d in G.edges(data=True):
             weights.append(d['weight'])
 
         weights_normalized = [(i / max(weights)) for i in weights]  # normalizing the weights for better visualization
 
-        # for naming the labels
+        # naming the labels if no list is provided
         if labels is None:
             labels = {}
             for i in range(0, n_classes):
                 labels[i] = "Label " + str(i)
 
-        #depending on the ratio type selected (linear or logarithmic)
+        #drawing the network depending on the ratio type selected (linear or logarithmic), main difference lies in the proportions (sizing) of
+        #node-edge relationships
         if n_e_ratiotype is "log":
             if log_ratio_base_val is not 1:
                 ratio_log = math.log(1 / min(weights_normalized), log_ratio_base_val)
