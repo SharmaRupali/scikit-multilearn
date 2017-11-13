@@ -12,8 +12,9 @@ Network Visualization
 One of the selected approaches to data visualization is a graph like structure - network, more precisely.
 In the simplest version of a network, there are 2 main aspects to take care of: nodes, edges. Going deeper for network
 generation purposes, we may want to look into the different possibilities of representing the attributes. Here, we are considering
-to represent 4 characteristics: color of the nodes, size of the nodes, width of the edges, and, color of the edges. All these are
-represented in the following way:
+to represent 4 characteristics: color of the nodes, size of the nodes, width of the edges, and, color of the edges.
+
+All these are represented in the following way:
     * color of the nodes (node_color): represented by the number of different labels.
     * size of the nodes (node_size): represented by the number of occurrences of a given label.
     * width of the edges (width): represented by the weights of the edges
