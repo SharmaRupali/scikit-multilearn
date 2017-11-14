@@ -111,8 +111,12 @@ matrix is symmetric, so we will take an edge once:
     H = nx.from_numpy_matrix(np.array(adjacency_matrix))
     G = H.to_undirected()
 
-In order to draw the network nicely and not to overlap the nodes, we will use "spring_layout" that positions nodes using Fruchterman-Reingold
-force-directed algorithm.
+In order to draw the network nicely and not to overlap the nodes, we need to determine some layout for the positioning of the nodes, for which
+we will see use one of the predefined layouts from netwrokx. There are different layouts implemented in networkx: circular_layout, random_layout,
+spring_layout, spectral_layout, and a few more. We will be using the **spring_layout** that uses the Fruchterman-Reingold force-directed
+algorithm to position the nodes. The reason behind using the spring_layout specifically is that no other layout implemented in networkx works as efficiently
+for our purpose: the circular_layout just positions the nodes on a circle; the random_layout positions the nodes uniformly at random in the unit square;
+and, spectral_layout positions nodes using the eigenvectors of the graph Laplacian
 
 .. code-block:: python
 
