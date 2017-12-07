@@ -106,4 +106,6 @@ samples may fall:
     centroids = kmeans.cluster_centers_
 
 Now, we need to find the indices for the labels, given my kmeans clustering, in order to for further calculations of cluster and slice
-size proportions respectively. 
+size proportions respectively.
+
+.. code-block:: python
