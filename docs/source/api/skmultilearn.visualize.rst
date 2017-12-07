@@ -16,3 +16,11 @@ skmultilearn.visualize.visualize_network module
     :members:
     :undoc-members:
     :show-inheritance:
+
+skmultilearn.visualize.visualize_cluster_pie module
+---------------------------------------------------
+
+.. automodule:: skmultilearn.visualize.visualize_cluster_pie
+    :members:
+    :undoc-members:
+    :show-inheritance:

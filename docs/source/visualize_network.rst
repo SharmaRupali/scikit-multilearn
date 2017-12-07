@@ -1,10 +1,11 @@
-.. _visualize:
+.. _visualize_network:
 
-Developing a visualization method
-=================================
+Developing a visualization method using Networks
+================================================
 
-In order to visualize the data, different methods of data visualization will be implemented. The first one to be worked on is the
-Network Visualization, followed by the Cluster-Pie Visualization.
+In order to visualize the data, different methods of data visualization may be considered. One of the methods presented is the
+Network Visualization, developed in parallel with the Cluster-Pie Visualization, which will be described in parallel with the other module,
+i.e. See "Developing a visualization method using Clustering".
 
 Network Visualization
 ---------------------
@@ -20,7 +21,7 @@ All these are represented in the following way:
     * width of the edges (width): represented by the weights of the edges
     * color of the edges (edge_color): same as the width: represented by the weights of the edges
 
-All the aforementioned characteristics will be defined on the basis of the adjacency matrix which we will be generated from the
+All the aforementioned characteristics will be defined on the basis of the adjacency matrix which will be generated from the
 co-occurrence matrix of labels from the given dataset.
 
 Using Predefined Libraries
