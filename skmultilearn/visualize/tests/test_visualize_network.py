@@ -1,4 +1,5 @@
 from sklearn.datasets import make_multilabel_classification
+from skmultilearn.visualize import VisualizeNetwork
 import matplotlib.pyplot as plt
 import scipy.sparse as sp
 import unittest
