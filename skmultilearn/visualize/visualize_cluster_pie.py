@@ -92,7 +92,7 @@ class VisualizeClusterPie():
         ax.legend()
         plt.show()
 
-    #to find the elements grouped in given clusters (values that form part of the cluster)
+    # to find the elements grouped in given clusters (values that form part of the cluster)
     # gives the indices of the labels (defined initially as rows in y)
     @staticmethod
     def cluster_indices_numpy(clustNum, labels_array):

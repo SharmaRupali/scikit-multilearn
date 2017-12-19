@@ -24,3 +24,11 @@ skmultilearn.visualize.visualize_cluster_pie module
     :members:
     :undoc-members:
     :show-inheritance:
+
+skmultilearn.visualize.visualize_heatmap module
+---------------------------------------------------
+
+.. automodule:: skmultilearn.visualize.visualize_heatmap
+    :members:
+    :undoc-members:
+    :show-inheritance:

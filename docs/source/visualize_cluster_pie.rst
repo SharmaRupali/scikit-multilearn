@@ -4,8 +4,8 @@ Developing a visualization method using Clustering
 ==================================================
 
 In order to visualize the data, different methods of data visualization may be considered. One of the methods presented is
-Visualization using Clustering, developed in parallel with the Network Visualization, which will be described in parallel with the other module,
-i.e. See "Developing a visualization method using Networks".
+Visualization using Clustering, developed in parallel with the Network Visualization, and the Heatmap Visualization, which will be described
+in parallel with the other modules, i.e. See "Developing a visualization method using Networks" OR "Developing a visualization method using Heatmap".
 
 Cluster Visualization
 ---------------------
@@ -27,8 +27,8 @@ All these are represented in the following way:
 All the aforementioned characteristics will be defined on the basis of centroids generating by clustering performed using K-means method, followed
 by the process of generating the markers taking in consideration the labels, size proportions, and plot sizes.
 
-Cluster Details
----------------
+Cluster Details - K-means Clustering
+------------------------------------
 
 Being the initial step in this development, clustering will be considered the most important part of the same as this is where we get the centers
 for our markers.
@@ -38,7 +38,7 @@ belongs to the cluster with the nearest mean, serving as a prototype of the clus
 Using Predefined Libraries
 --------------------------
 
-Some already implemented python modules will be used as basis for the development. Following modules will be imported:
+Some already implemented python modules will be used as basis for development. Following modules will be imported:
 
 .. code-block:: python
 
@@ -51,8 +51,7 @@ Some already implemented python modules will be used as basis for the developmen
 Generating Data for Experimentation
 -----------------------------------
 
-Let's start by generating some exemplary data:
-We'll generate a dataset with a defined number of classes, and sparse matrices
+Let's start by generating some exemplary data. We'll generate a dataset with a defined number of classes, and sparse matrices:
 
 .. code-block:: python
 
@@ -68,8 +67,8 @@ The parameters that are needed for our function are:
     * x: {array-like, sparse matrix}, shape (n_samples, n_features)
     * y: numpy array, shape (n_samples, ) - Target values: labels
     * labels (Default = None): labels to be shown on the network, if not specified any, uses defaults
-    * n_clusters: number of clusters the user wants to see the data split in
-    * size_proportion: for better proportions of pie sizes for better visualization
+    * n_clusters (Default = 3): number of clusters the user wants to see the data split in
+    * size_proportion (Default = 50): for better proportions of pie sizes for better visualization
 
 Getting Started with the Data
 -----------------------------

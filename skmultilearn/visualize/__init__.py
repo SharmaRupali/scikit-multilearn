@@ -8,4 +8,5 @@ from .visualize_cluster_pie import VisualizeClusterPie
 
 
 __all__ = ['VisualizeNetwork',
-           'VisualizeClusterPie']
+           'VisualizeClusterPie',
+           'VisualizeHeatmap']

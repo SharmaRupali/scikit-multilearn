@@ -4,8 +4,8 @@ Developing a visualization method using Networks
 ================================================
 
 In order to visualize the data, different methods of data visualization may be considered. One of the methods presented is the
-Network Visualization, developed in parallel with the Cluster-Pie Visualization, which will be described in parallel with the other module,
-i.e. See "Developing a visualization method using Clustering".
+Network Visualization, developed in parallel with the Cluster-Pie Visualization, and the Heatmap Visualization, which will be described
+in parallel with the other modules, i.e. See "Developing a visualization method using Clustering" OR "Developing a visualization method using Heatmap".
 
 Network Visualization
 ---------------------
@@ -27,8 +27,8 @@ co-occurrence matrix of labels from the given dataset.
 Using Predefined Libraries
 --------------------------
 
-The basis of this Network Visualization module are a few already implemented python modules including
-scikit-learn and scikit-multilearn modules. We are importing the following modules and how:
+The basis of this Network Visualization module are a few already implemented python modules including scikit-learn and scikit-multilearn
+modules. We are importing the following modules and how:
 
 .. code-block:: python
 
@@ -41,8 +41,7 @@ scikit-learn and scikit-multilearn modules. We are importing the following modul
 Generating Data for Experimentation
 -----------------------------------
 
-Let's start by generating some exemplary data:
-We'll generate a dataset with a defined number of classes, and sparse matrices
+Let's start by generating some exemplary data. We'll generate a dataset with a defined number of classes, and sparse matrices:
 
 .. code-block:: python
 

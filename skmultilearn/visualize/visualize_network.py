@@ -42,8 +42,8 @@ class VisualizeNetwork():
             for i in range(0, n_classes):
                 labels[i] = "Label " + str(i)
 
-        #drawing the network depending on the ratio type selected (linear or logarithmic), main difference lies in the proportions (sizing) of
-        #node-edge relationships
+        # drawing the network depending on the ratio type selected (linear or logarithmic), main difference lies in the
+        # proportions (sizing) of node-edge relationships
         if n_e_ratiotype is "log":
             if log_ratio_base_val is not 1:
                 ratio_log = math.log(1 / min(weights_normalized), log_ratio_base_val)
