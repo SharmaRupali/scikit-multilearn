@@ -32,5 +32,6 @@ class VisualizeClusterPieTests(unittest.TestCase):
         for p in list(parameters.keys()):
             self.assertTrue(p, )
 
+
 if __name__ == '__main__':
     unittest.main()

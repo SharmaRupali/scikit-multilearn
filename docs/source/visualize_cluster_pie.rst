@@ -57,7 +57,7 @@ Let's start by generating some exemplary data. We'll generate a dataset with a d
 
     from sklearn.datasets import make_multilabel_classification
 
-    x, y = make_multilabel_classification(sparse = True, n_classes = 7, return_indicator = 'sparse', allow_unlabeled= False)
+    x, y = make_multilabel_classification(sparse=True, n_classes=7, return_indicator='sparse', allow_unlabeled=False)
 
 
 Defining Parameters and Defaults

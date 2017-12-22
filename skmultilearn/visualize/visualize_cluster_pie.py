@@ -87,8 +87,8 @@ class VisualizeClusterPie():
         fig, ax = plt.subplots()
         for key in cl_xy.keys():
             for i in cl_xy[key]:
-                ax.scatter(centers[key][0], centers[key][1], marker=(cl_xy[key][i], 0), s=sl_max[key] ** 2 * sizes[key],
-                           c=cmap(i))
+                ax.scatter(centers[key][0], centers[key][1], marker=(cl_xy[key][i], 0),
+                           s=sl_max[key] ** 2 * sizes[key], c=cmap(i))
         ax.legend()
         plt.show()
 

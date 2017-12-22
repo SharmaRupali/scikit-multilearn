@@ -47,7 +47,7 @@ Let's start by generating some exemplary data. We'll generate a dataset with a d
 
     from sklearn.datasets import make_multilabel_classification
 
-    x, y = make_multilabel_classification(sparse = True, n_classes = 7, return_indicator = 'sparse', allow_unlabeled= False)
+    x, y = make_multilabel_classification(sparse=True, n_classes=7, return_indicator='sparse', allow_unlabeled=False)
 
 
 Defining Parameters and Defaults
@@ -95,7 +95,7 @@ of our next steps. The co-occurrence matrix is a matrix containing the informati
 
     co_occurrence_matrix = y_asInt.T.dot(y_asInt)
 
-Using the co-occurrence matrix that we just created, we'll from the base graph structure and the adjacency matrix to take the weights
+Using the co-occurrence matrix that we just created, we'll form the base graph structure and the adjacency matrix to take the weights
 from (for further use):
 
 .. code-block:: python
@@ -156,15 +156,20 @@ specified and calculated parameters. We have used the networkx.draw() method for
 
 .. code-block:: python
 
-    if n_e_ratiotype is "log":
-        if log_ratio_base_val is not 1:
-            ratio_log = math.log(1 / min(weights_normalized), log_ratio_base_val)
-            weights_normalized_log = [i * ratio_log for i in weights_normalized]
-            nx.draw(G, labels=labels, pos=spring_pos, node_size=[v * n_size for v in co_occurrence_matrix.diagonal()], node_color=range(n_classes), cmap=cmap_node, edge_color=weights_normalized_log, width=weights_normalized_log, edge_cmap=cmap_edge)
-    else:
-        ratio_li = linear_ratio_val / min(weights_normalized)
-        weights_normalized_li = [i * ratio_li for i in weights_normalized]
-        nx.draw(G, labels=labels, pos=spring_pos, node_size=[v * n_size for v in co_occurrence_matrix.diagonal()], node_color=range(n_classes), cmap=cmap_node, edge_color=weights_normalized_li, width=weights_normalized_li, edge_cmap=cmap_edge)
+        if n_e_ratiotype is "log":
+            if log_ratio_base_val is not 1:
+                ratio_log = math.log(1 / min(weights_normalized), log_ratio_base_val)
+                weights_normalized_log = [i * ratio_log for i in weights_normalized]
+                nx.draw(G, labels=labels, pos=spring_pos,
+                        node_size=[v * n_size for v in co_occurrence_matrix.diagonal()], node_color=range(n_classes),
+                        cmap=cmap_node, edge_color=weights_normalized_log, width=weights_normalized_log,
+                        edge_cmap=cmap_edge)
+        else:
+            ratio_li = linear_ratio_val / min(weights_normalized)
+            weights_normalized_li = [i * ratio_li for i in weights_normalized]
+            nx.draw(G, labels=labels, pos=spring_pos, node_size=[v * n_size for v in co_occurrence_matrix.diagonal()],
+                    node_color=range(n_classes), cmap=cmap_node, edge_color=weights_normalized_li,
+                    width=weights_normalized_li, edge_cmap=cmap_edge)
 
 
 We can notice, in the parameters of draw(), the specifications of the four characteristics that we had considered to be our representation essentials:

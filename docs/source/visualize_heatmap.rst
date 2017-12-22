@@ -44,7 +44,7 @@ Let's start by generating some exemplary data. We'll generate a dataset with a d
 
     from sklearn.datasets import make_multilabel_classification
 
-    x, y = make_multilabel_classification(sparse = True, n_classes = 7, return_indicator = 'sparse', allow_unlabeled= False)
+    x, y = make_multilabel_classification(sparse=True, n_classes=7, return_indicator='sparse', allow_unlabeled=False)
 
 
 Defining Parameters and Defaults
@@ -93,8 +93,10 @@ heatmap, for which we are using the "heatmap" function from the seaborn library 
     pyplot.figure()
     sns.heatmap(adjacency_matrix, cmap=cmap)
 
-Second one to be shown is the hierarchically-clustered heatmap, for which, again, we are using a preexisting function "clustermap" from the seaborn
-library:
+Second one to be shown is the hierarchically-clustered heatmap. Hierarchical clustering is one of the many clustering algorithms available to join
+pairs of samples into groups. In hierarchical clustering, each sample is assigned to its own group and then the algorithm continues iteratively,
+joining the two most similar clusters at each step, and continuing until there is just one group. There is a function "clustermap" in the "seaborn"
+library that we are using for our representation:
 
 .. code-block:: python
 
@@ -103,5 +105,5 @@ library:
     sns.clustermap(adjacency_matrix, cmap=cmap, robust=True)
 
 
-This method is the simplest of all the other visualization methods implemented in parallel, and also commonly used to visualize relationship, co-occurrences,
-patterns, comparisons, etc.
+Visualization with Heatmaps is the simplest of all the other visualization methods implemented in parallel, and also commonly used to visualize relationships,
+co-occurrences, patterns, comparisons, etc.

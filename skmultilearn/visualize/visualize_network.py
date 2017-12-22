@@ -18,7 +18,9 @@ class VisualizeNetwork():
 
         y = sp.csr_matrix(y)
         y_asInt = y.astype(int)  # cast y as int
-        co_occurrence_matrix = y_asInt.T.dot(y_asInt)  # multiplying the matrix with its transpose to get the co-occurrence matrix
+
+        # multiplying the matrix with its transpose to get the co-occurrence matrix
+        co_occurrence_matrix = y_asInt.T.dot(y_asInt)
 
         g = nx.from_scipy_sparse_matrix(co_occurrence_matrix)  # making graph from the sparse co-occurrence matrix
 
@@ -27,7 +29,8 @@ class VisualizeNetwork():
         H = nx.from_numpy_matrix(np.array(adjacency_matrix))  # creating network structure
         G = H.to_undirected()  # undirected graph - excluding edge repetitions
 
-        spring_pos = nx.spring_layout(G, k, iterations)  # positioning nodes using Fruchterman-Reingold force-directed algorithm
+        # positioning nodes using Fruchterman-Reingold force-directed algorithm
+        spring_pos = nx.spring_layout(G, k, iterations)
 
         # taking the weights of the edges from the graph (list(G.edges_iter(data='weight')))
         weights = []

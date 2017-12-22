@@ -13,7 +13,8 @@ class VisualizeHeatmap():
 
         y_asInt = y.astype(int)  # cast y as int
 
-        co_occurrence_matrix = y_asInt.T.dot(y_asInt)  # multiplying the matrix with its transpose to get the co-occurrence matrix
+        # multiplying the matrix with its transpose to get the co-occurrence matrix
+        co_occurrence_matrix = y_asInt.T.dot(y_asInt)
 
         g = nx.from_scipy_sparse_matrix(co_occurrence_matrix)  # making graph from the sparse co-occurrence matrix
 
