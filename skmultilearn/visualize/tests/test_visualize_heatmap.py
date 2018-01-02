@@ -7,7 +7,7 @@ import types
 
 class VisualizeHeatmapTests(unittest.TestCase):
 
-    def test_works_on_appropriate_params(self):
+    def test_validate_params(self):
 
         x, y = make_multilabel_classification(sparse=True, n_classes=7, return_indicator='sparse',
                                               allow_unlabeled=False)
@@ -15,12 +15,6 @@ class VisualizeHeatmapTests(unittest.TestCase):
         assert sp.issparse(y)
 
         VisualizeHeatmap.visualize_input_heatmap(x, y, cmap="reds")
-
-        labels = self.labels
-
-        def test_works(self):
-            print('labels ='), self.labels
-            isinstance(labels, types.StringTypes)
 
         parameters = {
             'cmap': "Reds",

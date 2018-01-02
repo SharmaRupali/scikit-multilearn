@@ -10,7 +10,7 @@ Submodules
 ----------
 
 skmultilearn.visualize.visualize_network module
---------------------------------
+-----------------------------------------------
 
 .. automodule:: skmultilearn.visualize.visualize_network
     :members:
@@ -26,7 +26,7 @@ skmultilearn.visualize.visualize_cluster_pie module
     :show-inheritance:
 
 skmultilearn.visualize.visualize_heatmap module
----------------------------------------------------
+------------------------------------------------
 
 .. automodule:: skmultilearn.visualize.visualize_heatmap
     :members:

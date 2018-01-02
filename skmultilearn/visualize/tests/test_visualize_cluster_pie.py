@@ -8,25 +8,20 @@ import types
 
 class VisualizeClusterPieTests(unittest.TestCase):
 
-    def test_works_on_appropriate_params(self):
+    def test_check_params(self):
 
         x, y = make_multilabel_classification(sparse=True, n_classes=7, return_indicator='sparse',
                                               allow_unlabeled=False)
 
         assert sp.issparse(y)
 
-        VisualizeClusterPie.visualize_input_cluster(x, y, labels=None, n_clusters=3, size_proportion=50)
-
-        labels = self.labels
-
-        def test_works(self):
-            print('labels ='), self.labels
-            isinstance(labels, types.StringTypes)
+        VisualizeClusterPie.visualize_input_cluster(x, y, labels=None, n_clusters=3, size_proportion=50, colors="hsv")
 
         parameters = {
             'labels': None,
             'n_clusters': 3,
             'size_proportion': 50,
+            'colors': "hsv",
         }
 
         for p in list(parameters.keys()):
@@ -35,3 +30,4 @@ class VisualizeClusterPieTests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+

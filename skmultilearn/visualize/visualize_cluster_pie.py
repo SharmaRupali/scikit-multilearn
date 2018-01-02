@@ -9,7 +9,7 @@ from sklearn.cluster import KMeans
 class VisualizeClusterPie():
 
     @staticmethod
-    def visualize_input_cluster(x, y, labels=None, n_clusters=3, size_proportion=50):
+    def visualize_input_cluster(x, y, labels=None, n_clusters=3, size_proportion=50, colors="hsv"):
 
         n_classes = len(y.toarray()[0]) # number of labels taken from the size of y
 
@@ -76,7 +76,7 @@ class VisualizeClusterPie():
                 sl_max[key] = np.max(cl_xy[key][i])
 
         # getting the colors with the help of the function get_cmap
-        cmap = VisualizeClusterPie.get_cmap(n_classes)
+        cmap = VisualizeClusterPie.get_cmap(n_classes, colors)
 
         # plot the centers
         plt.figure()
@@ -100,7 +100,7 @@ class VisualizeClusterPie():
 
     # generating random set of colors according to the number of classes/labels
     @staticmethod
-    def get_cmap(n, name='hsv'):
-        return plt.cm.get_cmap(name, n + 1)
+    def get_cmap(n, colors):
+        return plt.cm.get_cmap(colors, n + 1)
 
 

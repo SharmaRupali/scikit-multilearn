@@ -18,6 +18,7 @@ Subpackages
     skmultilearn.ext
     skmultilearn.neurofuzzy
     skmultilearn.problem_transform
+    skmultilearn.visualize
 
 Submodules
 ----------

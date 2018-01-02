@@ -19,13 +19,6 @@ class VisualizeNetworkTests(unittest.TestCase):
                                                  n_e_ratiotype="linear", linear_ratio_val=0.5, log_ratio_base_val=1.2,
                                                  cmap_node="copper", cmap_edge=plt.cm.BrBG)
 
-        labels = self.labels
-
-
-        def test_works(self):
-            print('labels ='), self.labels
-            isinstance(labels, types.StringTypes)
-
         parameters = {
             'labels': None,
             'k': 2,

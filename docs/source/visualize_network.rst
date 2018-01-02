@@ -112,11 +112,11 @@ matrix is symmetric, so we will take an edge once:
     G = H.to_undirected()
 
 In order to draw the network nicely and not to overlap the nodes, we need to determine some layout for the positioning of the nodes, for which
-we will see use one of the predefined layouts from netwrokx. There are different layouts implemented in networkx: circular_layout, random_layout,
+we will see use one of the predefined layouts from networkx. There are different layouts implemented in networkx: circular_layout, random_layout,
 spring_layout, spectral_layout, and a few more. We will be using the **spring_layout** that uses the Fruchterman-Reingold force-directed
 algorithm to position the nodes. The reason behind using the spring_layout specifically is that no other layout implemented in networkx works as efficiently
 for our purpose: the circular_layout just positions the nodes on a circle; the random_layout positions the nodes uniformly at random in the unit square;
-and, spectral_layout positions nodes using the eigenvectors of the graph Laplacian
+and, spectral_layout positions nodes using the eigenvectors of the graph Laplacian.
 
 .. code-block:: python
 
@@ -130,7 +130,7 @@ The edges are dependent on the weights, that we will take from the graph and sav
     for u,v,d in G.edges(data=True):
         weights.append(d['weight'])
 
-We need to normalize the weights so that all the wights are in propotion and we won't have inconsistencies while drawing the network
+We need to normalize the weights so that all the wights are in proportion and we won't have inconsistencies while drawing the network
 
 .. code-block:: python
 
@@ -146,7 +146,7 @@ In order to label the nodes in the network, if no list is provided, we need to g
             labels[i] = "Label " + str(i)
 
 After having completed all the aforementioned steps and having gotten the sizes of the nodes, and the normalized weights of the edges,
-we need to define the ratios for the node and edges size proportions, for which we need to choose a method for the calculation of ratios.
+we need to define the ratios for the node and edge size proportions, for which we need to choose a method for the calculation of ratios.
 Two methods have been defined to choose from: **linear** and **logarithmic**.
 
 The linear method simply calculates the ratio by dividing the defined ratio value (parameter) by the minimum value of the normalized weights.
