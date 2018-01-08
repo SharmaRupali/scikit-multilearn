@@ -54,6 +54,7 @@ The parameters that are needed for our function are:
     * x: {array-like, sparse matrix}, shape (n_samples, n_features)
     * y: numpy array, shape (n_samples, ) - Target values: labels
     * cmap (Default = "Reds"): set of predefined color palette values
+    * recurrence (Default = True): determines if  labels' self-occurrence id considered
 
 Getting Started with the Data
 -----------------------------
@@ -83,6 +84,16 @@ we need to convert the co-occurrence matrix into a graph like structure where it
 
     g = nx.from_scipy_sparse_matrix(co_occurrence_matrix)
     adjacency_matrix = nx.to_numpy_matrix(g, dtype=np.bool, nodelist=None)
+
+After having determined the adjacency_matrix, it's important to take in consideration if the labels' self-occurrence is desired. If we want to
+generate a heatmap which determines the self-occurrence of the labels, which is set as default, we make use of the adjacency matrix created as base
+for our further steps. But, if the self-occurrence doesn't have to be considered, we need to modify or adjacency matrix in the following way:
+
+.. code-block:: python
+
+    if recurrence is False:
+        di = np.diag_indices(len(adjacency_matrix))
+        adjacency_matrix[di] = 1
 
 After having the adjacency matrix, we are ready to use the "seaborn" library that we have imported for the representation of our heatmaps. As
 mentioned earlier, we have two types of heatmap representations: heatmap and hierarchically-clustered heatmap. The first one to be shown is the

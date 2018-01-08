@@ -14,10 +14,11 @@ class VisualizeHeatmapTests(unittest.TestCase):
 
         assert sp.issparse(y)
 
-        VisualizeHeatmap.visualize_input_heatmap(x, y, cmap="reds")
+        VisualizeHeatmap.visualize_input_heatmap(x, y, cmap="Reds", recurrence=True)
 
         parameters = {
             'cmap': "Reds",
+            'recurrence': True,
         }
 
         for p in list(parameters.keys()):

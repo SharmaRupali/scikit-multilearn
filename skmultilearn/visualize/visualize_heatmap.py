@@ -9,7 +9,7 @@ import seaborn as sns
 class VisualizeHeatmap():
 
     @staticmethod
-    def visualize_input_heatmap(x, y, cmap="Reds"):
+    def visualize_input_heatmap(x, y, cmap="Reds", recurrence=True):
 
         y_asInt = y.astype(int)  # cast y as int
 
@@ -19,6 +19,10 @@ class VisualizeHeatmap():
         g = nx.from_scipy_sparse_matrix(co_occurrence_matrix)  # making graph from the sparse co-occurrence matrix
 
         adjacency_matrix = nx.to_numpy_matrix(g, dtype=np.bool, nodelist=None)  # converting to adjacency matrix
+
+        if recurrence is False:
+            di = np.diag_indices(len(adjacency_matrix))
+            adjacency_matrix[di] = 1
 
         # seaborn heatmap
         pyplot.figure()
